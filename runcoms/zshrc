@@ -11,3 +11,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
