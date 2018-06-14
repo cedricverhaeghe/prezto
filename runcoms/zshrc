@@ -44,3 +44,5 @@ alias knife-sync='rm -rf data_bags environments nodes roles && knife download en
 #gitlab
 alias gitlab-ci='gitlab-ci-validate .gitlab-ci.yml'
 
+export EDITOR='vim'
+
