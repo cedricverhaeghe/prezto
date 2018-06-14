@@ -16,3 +16,31 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
+# General
+alias echopath='tr ":" "\n" <<< "$PATH"'
+alias flushdns='sudo killall -HUP mDNSResponder'
+alias aliases='vim ~/.zshrc'
+alias ssh-hosts='edit ~/.ssh/config'
+alias genpass='openssl rand -base64 9'
+
+# php
+alias checkstyle='bin/phpcs --standard=psr2 --extensions=php --warning-severity=0 src/'
+alias checkcode='find src/ -name "*.php" | xargs -n 1 php -l'
+
+# git
+alias gitclean='git remote update origin --prune'
+
+# symfony
+alias clearprod='php app/console cache:clear --env=prod'
+alias cleardev='php app/console cache:clear --env=dev'
+
+# raml
+alias runraml='rm -f api.html && raml2html api.raml > api.html && scp api.html jira:/var/www/doc/mgmt-api/index.html'
+alias flatraml='rm -f flat.raml && php ramlmerge.php api.raml > flat.raml'
+
+# chef
+alias knife-sync='rm -rf data_bags environments nodes roles && knife download environments && knife download roles && knife download data_bags && knife download nodes && git add . && git commit -am "State synced with Chef Server"'
+
+#gitlab
+alias gitlab-ci='gitlab-ci-validate .gitlab-ci.yml'
+
